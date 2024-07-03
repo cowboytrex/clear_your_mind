@@ -1,0 +1,116 @@
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  background-color: #00aaff;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  background-color: #00aaff;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0077cc;
+}
+
+.new-note-btn {
+  float: right;
+}
+
+/* Note List Styles */
+.note-list {
+  float: left;
+  width: 30%;
+  height: 80vh;
+  overflow-y: auto;
+  border-right: 1px solid #ddd;
+  padding: 0;
+  margin: 0;
+}
+
+.note-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.note-list ul li {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.note-list ul li:hover {
+  background-color: #f4f4f4;
+}
+
+.note-list ul li button {
+  background: none;
+  border: none;
+  color: red;
+  float: right;
+  cursor: pointer;
+}
+
+.note-list ul li button:hover {
+  color: darkred;
+}
+
+/* Note Editor Styles */
+.note-editor {
+  float: right;
+  width: 65%;
+  padding: 10px;
+}
+
+.note-editor input,
+.note-editor textarea {
+  width: calc(100% - 30px);
+  padding: 20px;
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.note-editor textarea {
+  height: 50vh;
+}
+
+.note-editor .btn {
+  width: 45%;
+  display: inline-block;
+  margin: 15px 20px;
+}
