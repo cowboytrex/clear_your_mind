@@ -1,22 +1,34 @@
-async function getNotes() {
-  try {
-    const response = await fetch('http://192.168.43.12:8080/api/notes');
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    const notes = await response.json();
-    const notesList = document.getElementById('notes');
-    notesList.innerHTML = '';
-    notes.forEach(note => {
-      const listItem = document.createElement('li');
-      listItem.textContent = note.title;
-      notesList.appendChild(listItem);
-    });
-  } catch (error) {
-    console.error('Failed to fetch notes:', error);
-  }
-}
+// js/index.js
 
-document.addEventListener('DOMContentLoaded', () => {
-  getNotes();
+document.addEventListener('DOMContentLoaded', (event) => {
+  const addNoteBtn = document.querySelector('.add-note');
+  const clearNotesBtn = document.querySelector('.clear-notes');
+  const listGroup = document.getElementById('list-group');
+  const noteTitle = document.querySelector('.note-title');
+  const noteText = document.querySelector('.note-textarea');
+  const clearFormBtn = document.querySelector('.clear-btn');
+
+  addNoteBtn.addEventListener('click', () => {
+    const title = noteTitle.value.trim();
+    const text = noteText.value.trim();
+    if (title && text) {
+      const listItem = document.createElement('li');
+      listItem.className = 'list-group-item';
+      listItem.innerHTML = `<h5>${title}</h5><p>${text}</p>`;
+      listGroup.appendChild(listItem);
+      noteTitle.value = '';
+      noteText.value = '';
+    } else {
+      alert('Please enter both title and text for the note.');
+    }
+  });
+
+  clearNotesBtn.addEventListener('click', () => {
+    listGroup.innerHTML = '';
+  });
+
+  clearFormBtn.addEventListener('click', () => {
+    noteTitle.value = '';
+    noteText.value = '';
+  });
 });
